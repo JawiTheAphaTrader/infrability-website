@@ -24,17 +24,15 @@ Delete the entire `#platform` section from `index.html`. Per the decision to "ke
 
 > Note: Predictive ML & MLOps and Managed Support & TAM were previously flagged (memory: `homepage-ia-declutter`, `original-site-gap-analysis`) as gaps not to lose. They are being dropped per explicit instruction this session; trivially reinstated later if the investor reverses.
 
-### A2. New "Offerings" overview band
-Add a new `<section id="offerings">` placed **immediately after the stats strip** (high on the page, before the AIVortex Intelligence Layer), so it frames the breadth of offerings early and reinforces the curiosity hook.
+### A2. Two named buckets — without duplicating the AI content
 
-Structure — two clearly headed groups:
+The page already has full **AI Product Suite** (`#products`) and **Agentic Enterprise Solutions** (`#agents`) sections. Re-listing them in an "AI Offerings" overview would be repetitive. So the two-bucket taxonomy is expressed as:
 
-**AI Offerings**
-- Short lede positioning AIVortex AI products + agentic solutions as the AI line.
-- A compact list/chips of the AI line (RegNexus, RiskLens, Document Intelligence Hub, agents, …) that **deep-link down** to the existing detailed `#products` and `#agents` sections.
-- CTA: "Explore AI products →" (to `#products`).
+**AI Offerings — umbrella label only (no new cards, no re-listing).**
+- A slim **"AI Offerings" section divider/kicker** placed immediately **before the AI Product Suite**, visually grouping the existing Product Suite + Agentic Solutions sections under one heading. Pure framing — no content duplicated.
 
-**Other Business Solutions Offerings**
+**Other Business Solutions Offerings — the only genuinely new content.**
+- A **new `<section id="offerings">`** placed **after the AI sections** (after `#agents`, before/around Industries), since the AI line leads and business solutions are secondary.
 - A **3-card row** (decision: three cards, so Odoo is visible on its own):
   1. **CRM — Dynamics 365** (the "Core CRM": Infrability's Dynamics 365 CRM capability — sales, service, customer engagement).
   2. **ERP — Microsoft** (Dynamics 365 Finance & Operations / Business Central).
@@ -105,7 +103,8 @@ Under the H1/sub in the left column:
 ## Verification
 - Hero renders with orb (or CSS fallback) + animated motion; reduced-motion shows static.
 - Chips: default selected, click swaps answer + scrolls to correct on-page target, keyboard works.
-- `#offerings` shows AI Offerings group + 3 Other-Business cards (CRM, Microsoft ERP, Odoo); links resolve.
+- Slim "AI Offerings" divider sits before the AI Product Suite (no AI content duplicated).
+- `#offerings` (Other Business Solutions Offerings) shows the 3 cards (CRM, Microsoft ERP, Odoo); links resolve.
 - `#platform` fully removed; no dangling nav/footer links or orphaned CSS.
 - Both themes + both breakpoints verified.
 
