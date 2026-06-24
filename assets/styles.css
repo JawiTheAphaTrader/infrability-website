@@ -255,6 +255,23 @@ section{padding:clamp(60px,7vw,110px) 0;position:relative}
 [data-theme="dark"]{--orb-img:url('img/hero-orb-dark.webp')}
 .orb-stage .ringz,.orb-stage .disc,.orb-stage .mark{opacity:0}
 
+/* curiosity hook — interactive teaser chips */
+.hook{margin-top:28px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel);max-width:54ch}
+.hero-copy .hook{text-align:left}
+.hook-q{display:block;font-family:'Space Grotesk';font-weight:600;font-size:.98rem;color:var(--head);margin-bottom:12px}
+.hook-chips{display:flex;flex-wrap:wrap;gap:8px}
+.hook-chip{font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.04em;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;
+  transition:transform .18s,border-color .18s,background .18s,color .18s}
+.hook-chip:hover{transform:translateY(-2px);border-color:rgba(var(--cyan-rgb),.5)}
+.hook-chip.is-active{color:var(--btn-ink);background:var(--grad);border-color:transparent}
+.hook-chip:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.hook-answer{margin-top:14px;font-size:.92rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.hook-answer-link{color:var(--cyan);font-family:'Space Grotesk';font-weight:500;white-space:nowrap}
+.hook-answer-link:hover{color:var(--head)}
+@media(max-width:880px){.hook{margin-left:auto;margin-right:auto}.hook-chips{justify-content:center}.hero-copy .hook{text-align:center}.hook-answer{justify-content:center}}
+@media(prefers-reduced-motion:reduce){.hook-chip{transition:none}}
+
 /* ---------- AIVortex governance console ---------- */
 .console-wrap{position:relative;z-index:2;max-width:1000px;margin:54px auto 0}
 .console{position:relative;border-radius:18px;border:1px solid var(--line);
@@ -319,6 +336,9 @@ section{padding:clamp(60px,7vw,110px) 0;position:relative}
   background:linear-gradient(135deg,rgba(var(--azure-rgb),.14),rgba(var(--cyan-rgb),.11));
   border:1px solid var(--line);margin-bottom:18px;color:var(--cyan)}
 .ic svg{width:23px;height:23px;stroke:currentColor;stroke-width:1.6;fill:none}
+.ic.brand{background:#fff}
+.ic.brand svg{stroke:none;width:26px;height:26px}
+.ic.brand.odoo span{font-family:'Space Grotesk';font-weight:700;font-size:.95rem;color:#714B67;letter-spacing:-.01em}
 
 .card{position:relative;background:var(--panel);border:1px solid var(--line);
   border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow);overflow:hidden;
@@ -504,6 +524,8 @@ section{padding:clamp(60px,7vw,110px) 0;position:relative}
     radial-gradient(50% 70% at 50% 120%, rgba(255,255,255,.18), transparent 60%),
     radial-gradient(40% 60% at 80% -20%, rgba(255,255,255,.14), transparent 60%),
     radial-gradient(40% 60% at 18% -10%, rgba(75,84,214,.3), transparent 60%)}
+.cta-band::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:url('img/band-threads.webp') center/cover no-repeat;opacity:.22;mix-blend-mode:screen}
 .cta-band>*{position:relative;z-index:1}
 .cta-band h2{margin-top:10px;color:#fff}
 .cta-band .eyebrow{justify-content:center;color:rgba(255,255,255,.92)}

@@ -97,6 +97,27 @@
     }
   }
 
+  /* ---------- hero curiosity hook (teaser chips) ---------- */
+  (function(){
+    var hook = document.querySelector('.hook');
+    if(!hook) return;
+    var chips = hook.querySelectorAll('.hook-chip');
+    var answerText = hook.querySelector('.hook-answer-text');
+    var answerLink = hook.querySelector('.hook-answer-link');
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.classList.remove('is-active'); c.setAttribute('aria-pressed','false'); });
+        chip.classList.add('is-active');
+        chip.setAttribute('aria-pressed','true');
+        answerText.textContent = chip.dataset.answer;
+        answerLink.textContent = chip.dataset.linkLabel + ' →';
+        answerLink.setAttribute('href', chip.dataset.link);
+        var target = document.querySelector(chip.dataset.link);
+        if(target){ target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'}); }
+      });
+    });
+  })();
+
   /* ---------- mobile nav ---------- */
   var menuBtn = document.getElementById('menuBtn');
   var nav = document.getElementById('nav');
