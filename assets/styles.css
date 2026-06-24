@@ -378,23 +378,6 @@ section{padding:clamp(60px,7vw,110px) 0;position:relative}
 .grid-cta a{color:var(--cyan);font-family:'Space Grotesk';font-weight:500;white-space:nowrap}
 .grid-cta a:hover{color:var(--head)}
 
-/* ---------- platform "ongoing value" highlight row ---------- */
-.pf-divider{display:flex;align-items:center;gap:16px;justify-content:center;
-  font-family:'JetBrains Mono';font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--muted-2);margin:38px 0 22px}
-.pf-divider::before,.pf-divider::after{content:"";height:1px;flex:1;max-width:150px}
-.pf-divider::before{background:linear-gradient(90deg,transparent,var(--line))}
-.pf-divider::after{background:linear-gradient(90deg,var(--line),transparent)}
-.value-card{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
-  padding:24px 26px;box-shadow:var(--shadow);
-  transition:border-color .25s,transform .25s,box-shadow .25s}
-.value-card:hover{border-color:rgba(var(--azure-rgb),.4);transform:translateY(-3px);
-  box-shadow:var(--shadow-lg),var(--elev)}
-.value-card .ic{width:44px;height:44px;margin-bottom:0;flex:none}
-.value-card h4{font-family:'Space Grotesk';font-weight:600;font-size:1.06rem;margin-bottom:6px;color:var(--head)}
-.value-card p{color:var(--muted);font-size:.9rem}
-
 /* ---------- aivortex pipeline flow ---------- */
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .flow-step{position:relative;padding:26px 22px;border:1px solid var(--line);
