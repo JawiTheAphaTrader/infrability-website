@@ -14,3 +14,8 @@ ocrPage_Infrability.html
 
 # Source hand-off doc — screenshots extracted into assets/img/
 assets/img/regnexus screens.docx
+
+# playwright / verification artifacts
+.playwright-mcp/
+verify-*.jpeg
+page-*.jpeg
