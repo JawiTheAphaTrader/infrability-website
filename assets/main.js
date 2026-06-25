@@ -118,6 +118,47 @@
     });
   })();
 
+  /* ---------- contact form (Formspree + mailto fallback) ---------- */
+  (function(){
+    var form = document.getElementById('contactForm');
+    if(!form) return;
+    var status = form.querySelector('.cf-status');
+    var btn = form.querySelector('button[type="submit"]');
+    function setStatus(msg, cls){ status.textContent = msg; status.className = 'cf-status' + (cls ? ' ' + cls : ''); }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(form.querySelector('[name="_gotcha"]').value) return; // bot trap
+      var ok = true;
+      form.querySelectorAll('[required]').forEach(function(f){
+        var valid = f.value.trim() && (f.type !== 'email' || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
+        f.closest('.field').classList.toggle('error', !valid);
+        if(!valid) ok = false;
+      });
+      if(!ok){ setStatus('Please complete the required fields with a valid email.', 'err'); return; }
+      var data = new FormData(form);
+      var action = form.getAttribute('action');
+      if(action.indexOf('YOUR_FORM_ID') !== -1){
+        // form service not configured yet — fall back to email
+        var body = 'Name: ' + data.get('name') + '\nEmail: ' + data.get('email') +
+          '\nCompany: ' + (data.get('company') || '—') + '\nTopic: ' + (data.get('topic') || '—') +
+          '\n\n' + (data.get('message') || '');
+        window.location.href = 'mailto:info@infrability.com?subject=' +
+          encodeURIComponent('Enquiry — ' + (data.get('company') || data.get('name'))) +
+          '&body=' + encodeURIComponent(body);
+        setStatus('Opening your email app — or write to info@infrability.com.', 'ok');
+        return;
+      }
+      btn.disabled = true; setStatus('Sending…', '');
+      fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(r){
+          if(r.ok){ form.reset(); setStatus('Thanks — we’ll be in touch shortly.', 'ok'); }
+          else { return r.json().then(function(d){ setStatus(d && d.errors ? d.errors.map(function(x){return x.message;}).join(', ') : 'Something went wrong — please email info@infrability.com.', 'err'); }); }
+        })
+        .catch(function(){ setStatus('Network error — please email info@infrability.com.', 'err'); })
+        .then(function(){ btn.disabled = false; });
+    });
+  })();
+
   /* ---------- mobile nav ---------- */
   var menuBtn = document.getElementById('menuBtn');
   var nav = document.getElementById('nav');

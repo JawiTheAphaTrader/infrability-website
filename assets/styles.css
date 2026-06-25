@@ -432,6 +432,37 @@ section{padding:clamp(60px,7vw,110px) 0;position:relative}
   background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 15px;white-space:nowrap}
 @media(max-width:680px){.ms-band-lead{flex-basis:100%}}
 
+/* Contact form */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;
+  border:1px solid var(--line);background:var(--panel);border-radius:24px;
+  padding:clamp(28px,4vw,52px);box-shadow:var(--shadow)}
+.contact-pitch .lede{margin-top:14px}
+.contact-points{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:13px}
+.contact-points li{display:flex;align-items:center;gap:11px;color:var(--ink-soft);font-size:.92rem}
+.contact-points li svg{width:18px;height:18px;stroke:var(--cyan);stroke-width:1.8;fill:none;flex:none}
+.contact-points a{color:var(--cyan)}
+.contact-points a:hover{color:var(--head)}
+.contact-form{display:grid;gap:14px}
+.contact-form .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form .field{display:grid;gap:6px}
+.contact-form label{font-family:'Space Grotesk';font-weight:500;font-size:.84rem;color:var(--ink-soft)}
+.contact-form .cf-opt{color:var(--muted-2);font-weight:400}
+.contact-form input,.contact-form select,.contact-form textarea{
+  font-family:'Inter',system-ui,sans-serif;font-size:.92rem;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:11px;padding:11px 13px;width:100%;
+  transition:border-color .2s,box-shadow .2s}
+.contact-form textarea{resize:vertical;min-height:96px}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{
+  outline:none;border-color:rgba(var(--cyan-rgb),.6);box-shadow:0 0 0 3px rgba(var(--cyan-rgb),.14)}
+.contact-form .field.error input,.contact-form .field.error textarea{border-color:var(--warn)}
+.contact-form .btn{width:100%;justify-content:center;cursor:pointer;margin-top:4px;border:none}
+.cf-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.cf-status{font-size:.88rem;min-height:1.2em;margin:0}
+.cf-status.ok{color:var(--cyan)}
+.cf-status.err{color:var(--warn)}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.contact-form .cf-row{grid-template-columns:1fr}}
+
 /* ---------- intelligence-layer hero mark ---------- */
 .il-grid{display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:center}
 .il-visual{position:relative;aspect-ratio:1;display:grid;place-items:center}
