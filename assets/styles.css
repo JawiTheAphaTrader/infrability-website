@@ -41,7 +41,7 @@
   --hair:rgba(16,24,42,.12);
   --header-bg:rgba(255,255,255,.72);
   --nav-pop:rgba(255,255,255,.98);
-  --maxw:1200px;
+  --maxw:1360px;
   --r:16px;
   --r-lg:22px;
 }
@@ -214,7 +214,7 @@ section{padding:clamp(60px,7vw,110px) 0;position:relative}
 
 /* ---------- two-column hero ---------- */
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;
-  gap:clamp(28px,5vw,64px);align-items:center;max-width:1180px;margin:0 auto}
+  gap:clamp(28px,5vw,64px);align-items:center;margin:0 auto}
 .hero-copy{max-width:none;margin:0;text-align:left}
 .hero-copy p.sub{margin-left:0;max-width:54ch}
 .hero-copy .hero-cta{justify-content:flex-start}
