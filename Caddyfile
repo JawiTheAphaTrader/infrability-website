@@ -1,0 +1,9 @@
+# Static site served by Caddy on Railway's injected $PORT
+:{$PORT:80}
+
+root * /srv
+encode gzip zstd
+
+# serve /foo and /foo.html and directories
+try_files {path} {path}.html {path}/
+file_server

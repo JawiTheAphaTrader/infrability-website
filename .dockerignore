@@ -1,0 +1,10 @@
+.git
+.gitignore
+.remember
+.superpowers
+.playwright-mcp
+docs
+node_modules
+infrability (1).html
+ocrPage_Infrability.html
+*.docx
