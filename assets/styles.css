@@ -417,6 +417,21 @@ section{padding:clamp(60px,7vw,110px) 0;position:relative}
 .arch-layer.core .lnodes span{background:rgba(var(--azure-rgb),.07);border-color:rgba(var(--azure-rgb),.18)}
 .arch-note{margin-top:22px;color:var(--muted);font-size:.95rem;max-width:72ch}
 
+/* Microsoft Partner band */
+.ms-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px 40px;
+  border:1px solid var(--line);background:var(--panel);border-radius:20px;
+  padding:clamp(22px,3vw,34px) clamp(24px,3vw,38px);box-shadow:var(--shadow)}
+.ms-band-lead{display:flex;align-items:center;gap:18px;flex:1 1 360px;min-width:0}
+.ms-logo{width:52px;height:52px;border-radius:13px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.ms-logo svg{width:29px;height:29px}
+.ms-band-lead .eyebrow{margin-bottom:8px}
+.ms-band-lead h3{font-family:'Space Grotesk';font-weight:600;font-size:clamp(1.02rem,1.6vw,1.28rem);
+  color:var(--head);line-height:1.32;max-width:36ch}
+.ms-badges{display:flex;flex-wrap:wrap;gap:9px}
+.ms-badges span{font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.04em;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 15px;white-space:nowrap}
+@media(max-width:680px){.ms-band-lead{flex-basis:100%}}
+
 /* ---------- intelligence-layer hero mark ---------- */
 .il-grid{display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:center}
 .il-visual{position:relative;aspect-ratio:1;display:grid;place-items:center}
