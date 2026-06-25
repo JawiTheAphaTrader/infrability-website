@@ -511,7 +511,8 @@ section{padding:clamp(60px,7vw,110px) 0;position:relative}
 .offices{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .office{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;
   background:var(--panel);box-shadow:var(--shadow)}
-.office .flag{font-size:.72rem;font-family:'JetBrains Mono';letter-spacing:.1em;color:var(--cyan)}
+.office .flag{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;font-family:'JetBrains Mono';letter-spacing:.1em;color:var(--cyan)}
+.office .flag img{height:13px;width:auto;border-radius:2px;box-shadow:0 0 0 1px var(--line)}
 .office h4{font-family:'Space Grotesk';font-weight:600;margin:9px 0 5px;font-size:1.05rem;color:var(--head)}
 .office p{color:var(--muted);font-size:.84rem}
 
