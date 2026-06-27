@@ -19,3 +19,18 @@ assets/img/regnexus screens.docx
 .playwright-mcp/
 verify-*.jpeg
 page-*.jpeg
+
+# Design mockups & section screenshots at repo root (working reference,
+# not site assets — real assets live under assets/)
+/*.png
+/*.jpg
+/*.jpeg
+
+# Solution deck + Office lock/temp files
+*.pptx
+~$*
+
+# Unused logo source variants (cropped versions live in assets/img/)
+assets/img/HQAivortex.png
+assets/img/InfraLogo.jpeg
+assets/img/InfraLogo1.jpeg
