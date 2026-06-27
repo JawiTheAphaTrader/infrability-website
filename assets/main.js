@@ -80,15 +80,16 @@
           pre = el.dataset.prefix || '',
           suf = el.dataset.suffix || '',
           s = 0, step = end / 40;
+      var fmt = function(n){ return n.toLocaleString('en-US'); };
       var tick = function(){
         s += step;
-        if(s >= end){ el.textContent = pre + end + suf; }
-        else{ el.textContent = pre + Math.floor(s) + suf; requestAnimationFrame(tick); }
+        if(s >= end){ el.textContent = pre + fmt(end) + suf; }
+        else{ el.textContent = pre + fmt(Math.floor(s)) + suf; requestAnimationFrame(tick); }
       };
       tick();
     };
     if(reduce || !('IntersectionObserver' in window)){
-      counters.forEach(function(el){ el.textContent = (el.dataset.prefix||'') + el.dataset.count + (el.dataset.suffix||''); });
+      counters.forEach(function(el){ el.textContent = (el.dataset.prefix||'') + parseFloat(el.dataset.count).toLocaleString('en-US') + (el.dataset.suffix||''); });
     }else{
       var cio = new IntersectionObserver(function(entries){
         entries.forEach(function(e){ if(e.isIntersecting){ run(e.target); cio.unobserve(e.target); } });
